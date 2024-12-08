@@ -1,0 +1,164 @@
+/* Light Theme Colors */
+:root {
+    --background-color: #ffffff;
+    --primary-color: #0088cc; /* Telegram's blue */
+    --secondary-color: #f3f3f3;
+    --text-color: #000000;
+    --card-bg: #ffffff;
+    --card-border: #e0e0e0;
+    --padding: 20px;
+}
+
+/* Dark Theme Colors */
+[data-theme="dark"] {
+    --background-color: #121212;
+    --primary-color: #0088cc;
+    --secondary-color: #1f1f1f;
+    --text-color: #e5e5e5;
+    --card-bg: #1f1f1f;
+    --card-border: #333333;
+}
+
+/* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    padding: var(--padding);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.theme-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: white;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+input, select, button {
+    width: calc(50% - 10px);
+    padding: 10px;
+    border: 1px solid var(--card-border);
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+input:focus, select:focus, button:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #006bb3;
+}
+
+.channel-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.card {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-icon {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-right: 15px;
+}
+
+.card-content {
+    flex-grow: 1;
+}
+
+.card-content h3 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.card-content p {
+    margin: 5px 0 0;
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+/* Light theme */
+:root {
+    --delete-button-bg: #e74c3c;
+    --delete-button-hover-bg: #c0392b;
+    --delete-button-text: white;
+}
+
+/* Dark theme */
+[data-theme="dark"] {
+    --delete-button-bg: #c0392b;
+    --delete-button-hover-bg: #e74c3c;
+    --delete-button-text: #f0f0f0;
+}
+
+/* Delete button style */
+.card-actions button {
+    background-color: var(--delete-button-bg);
+    color: var(--delete-button-text);
+    border: none;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover state */
+.card-actions button:hover {
+    background-color: var(--delete-button-hover-bg);
+    transform: translateY(-2px);
+}

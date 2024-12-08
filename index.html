@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <head>
+        <!-- Favicon for browser tab -->
+        <link rel="icon" href="512x512.png" type="image/png">
+
+        <!-- Favicon for high-resolution displays -->
+        <link rel="icon" href="512x512.png" sizes="32x32" type="image/png">
+
+        <!-- Favicon for mobile devices (optional) -->
+        <link rel="apple-touch-icon" href="512x512.png" sizes="180x180">
+    </head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telegram Channel Manager</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="header">
+        <h1>Telegram Manager</h1>
+        <button id="themeToggle" class="theme-btn">🌙</button>
+    </div>
+    <div class="container">
+        <form id="linkForm" class="form">
+            <input type="text" id="channelLink" placeholder="Channel Name (e.g., channel_name)">
+            <input type="text" id="label" placeholder="Label">
+            <input type="text" id="category" placeholder="Category">
+            <select id="iconSelector">
+                <option value="fas fa-hashtag">#</option>
+                <option value="fas fa-user-circle">👤</option>
+                <option value="fas fa-comments">💬</option>
+                <option value="fas fa-star">⭐</option>
+            </select>
+            <button type="submit">Add Channel</button>
+        </form>
+        <div id="channelList" class="channel-list"></div>
+    </div>
+    <script src="script.js"></script>
+    <link rel="manifest" href="/manifest.json" />
+    
+</body>
+</html>
