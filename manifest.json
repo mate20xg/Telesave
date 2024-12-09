@@ -2,7 +2,7 @@
   "name": "Telesave",
   "short_name": "Telesave",
   "description": "A web app to manage Telegram channels.",
-  "start_url": "/index.html",
+  "start_url": "https://mate20xg.github.io/Telesave/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#0088cc",
