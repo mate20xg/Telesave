@@ -1,5 +1,5 @@
 {
-  "name": "Telesave",
+  "name": "Telesaveapp",
   "short_name": "Telesave",
   "description": "A web app to manage Telegram channels.",
   "start_url": "/index.html",
