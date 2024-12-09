@@ -6,7 +6,8 @@
     --text-color: #000000;
     --card-bg: #ffffff;
     --card-border: #e0e0e0;
-    --padding: 20px;
+    --padding: 15px;
+    --icon-color: #0088cc;
 }
 
 /* Dark Theme Colors */
@@ -17,6 +18,7 @@
     --text-color: #e5e5e5;
     --card-bg: #1f1f1f;
     --card-border: #333333;
+    --icon-color: #50b7f5;
 }
 
 /* General Styling */
@@ -27,7 +29,6 @@ body {
     margin: 0;
     padding: 0;
     transition: background-color 0.3s ease, color 0.3s ease;
-    padding: var(--padding);
 }
 
 .header {
@@ -36,10 +37,12 @@ body {
     align-items: center;
     background-color: var(--primary-color);
     color: white;
-    padding: 10px 20px;
+    padding: 10px 15px;
     border-radius: 10px;
-    margin-bottom: 20px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .theme-btn {
@@ -56,17 +59,18 @@ body {
     margin: 0 auto;
     display: flex;
     flex-direction: column;
+    padding: var(--padding);
 }
 
+/* Form Area */
 .form {
     display: flex;
-    flex-wrap: wrap;
     gap: 10px;
     margin-bottom: 20px;
 }
 
-input, select, button {
-    width: calc(50% - 10px);
+input[type="text"] {
+    flex-grow: 1;
     padding: 10px;
     border: 1px solid var(--card-border);
     border-radius: 6px;
@@ -74,91 +78,86 @@ input, select, button {
     transition: border-color 0.3s ease;
 }
 
-input:focus, select:focus, button:focus {
+input[type="text"]:focus {
     outline: none;
     border-color: var(--primary-color);
 }
 
-button {
+button.add-btn {
+    padding: 10px 15px;
     background-color: var(--primary-color);
     color: white;
     border: none;
+    border-radius: 6px;
+    font-size: 1rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
-button:hover {
+button.add-btn:hover {
     background-color: #006bb3;
 }
 
+/* Channel List */
 .channel-list {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
-.card {
-    background-color: var(--card-bg);
-    color: var(--text-color);
-    border: 1px solid var(--card-border);
-    border-radius: 10px;
-    padding: 15px;
+.channel-card {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px 15px;
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, transform 0.2s;
+    cursor: pointer;
 }
 
-.card-icon {
+.channel-card:hover {
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+.channel-card .icon {
     font-size: 1.5rem;
-    color: var(--primary-color);
-    margin-right: 15px;
+    color: var(--icon-color);
+    margin-right: 10px;
 }
 
-.card-content {
+.channel-card .details {
     flex-grow: 1;
 }
 
-.card-content h3 {
+.channel-card .details h3 {
     margin: 0;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
 }
 
-.card-content p {
+.channel-card .details p {
     margin: 5px 0 0;
     font-size: 0.9rem;
     color: var(--text-color);
+    opacity: 0.8;
 }
 
-/* Light theme */
-:root {
-    --delete-button-bg: #e74c3c;
-    --delete-button-hover-bg: #c0392b;
-    --delete-button-text: white;
-}
-
-/* Dark theme */
-[data-theme="dark"] {
-    --delete-button-bg: #c0392b;
-    --delete-button-hover-bg: #e74c3c;
-    --delete-button-text: #f0f0f0;
-}
-
-/* Delete button style */
-.card-actions button {
-    background-color: var(--delete-button-bg);
-    color: var(--delete-button-text);
+/* Delete Button */
+.delete-btn {
+    background-color: var(--icon-color);
     border: none;
-    padding: 8px 12px;
+    color: white;
+    padding: 5px 10px;
     font-size: 0.9rem;
     border-radius: 6px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Hover state */
-.card-actions button:hover {
-    background-color: var(--delete-button-hover-bg);
-    transform: translateY(-2px);
+.delete-btn:hover {
+    background-color: #c0392b;
+    transform: scale(1.1);
 }
